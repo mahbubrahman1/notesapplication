@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Note
+
+# register model in database
+admin.site.register(Note)
