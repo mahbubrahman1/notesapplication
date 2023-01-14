@@ -2,6 +2,11 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
+from .models import Note
+from .serializers import NoteSerializer
+
+
+# all routes 
 @api_view(['GET'])
 def get_routes(request):
     routes = [
@@ -38,3 +43,21 @@ def get_routes(request):
     ]
     
     return Response(routes)
+
+
+# get all notes 
+@api_view(['GET'])
+def get_notes(request):
+    notes = Note.objects.all().order_by('-updated')
+    serializer = NoteSerializer(notes, many=True)
+
+    return Response(serializer.data)
+
+
+# get note
+@api_view(['GET'])
+def get_note(request, pk):
+    note = Note.objects.get(id=pk)
+    serializer = NoteSerializer(note, many=False)
+
+    return Response(serializer.data)
