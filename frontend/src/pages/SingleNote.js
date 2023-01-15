@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 const SingleNote = () => {
     const { id } = useParams();
@@ -12,9 +14,14 @@ const SingleNote = () => {
     }, [id])
 
     return (
-        <div>
-            <h2>{note?.body}</h2>
-        </div>
+        <div className='note'>
+            <div className="note-header">
+                <Link to='/'>
+                    <FontAwesomeIcon icon={faArrowLeft} size='2x' />
+                </Link>
+            </div>
+            <textarea defaultValue={note?.body}></textarea>
+        </div >
     )
 }
 

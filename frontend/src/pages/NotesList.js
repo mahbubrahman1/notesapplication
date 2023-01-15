@@ -12,12 +12,17 @@ const NotesList = () => {
 
     return (
         <div>
-            <p>NotesList {notes.length}</p>
-            {
-                notes.map(note => (
-                    <NoteItem key={note.id} note={note} />
-                ))
-            }
+            <div className="notes-header">
+                <h2 className='notes-title'>&#9782; Notes</h2>
+                <p className='notes-count'>{notes.length}</p>
+            </div>
+            <div className='notes-list'>
+                {
+                    notes.map(note => (
+                        <NoteItem key={note.id} note={note} />
+                    ))
+                }
+            </div>
         </div>
     )
 }
