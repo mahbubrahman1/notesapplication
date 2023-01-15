@@ -61,3 +61,17 @@ def get_note(request, pk):
     serializer = NoteSerializer(note, many=False)
 
     return Response(serializer.data)
+
+
+# update or edit note 
+@api_view(['PUT'])
+def edit_note(request, pk):
+    data = request.data
+    note = Note.objects.get(id=pk)
+    serializer = NoteSerializer(instance=note, data=data)
+
+    # check note is valid than save
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)

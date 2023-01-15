@@ -1,7 +1,6 @@
 import NotesList from "./pages/NotesList";
 import { Routes, Route } from 'react-router-dom';
 import SingleNote from "./pages/SingleNote";
-// import './assets/sass/app.scss'
 import './App.css';
 
 function App() {

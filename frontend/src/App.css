@@ -50,36 +50,36 @@ a {
     position: relative;
 }
 
-.app-header {
+/* .app-header {
     display: flex;
     align-items: center;
     padding: 16px;
     justify-content: space-between;
     background-color: var(--color-lighter);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1)
-}
+} */
 
-.app-header h1 {
+/* .app-header h1 {
     font-size: 30px;
     color: var(--color-dark);
     font-weight: 800;
     text-align: center;
-}
+} */
 
-.app-header button {
+/* .app-header button {
     border: 0;
     background: transparent;
     cursor: pointer;
-}
+} */
 
-.app-header button svg {
+/* .app-header button svg {
     fill: #1f2124;
     height: 25px;
     width: 25px;
     object-fit: cover;
-}
+} */
 
-/* Notes Styles */
+/*--------- Notes List Styles ------- */
 
 .notes-header {
     display: flex;
@@ -143,7 +143,8 @@ span {
 }
 
 
-/* Note styles */
+/*---------- Note styles --------- */
+
 .note-header {
     display: flex;
     align-items: center;
@@ -193,4 +194,8 @@ svg {
 
 .note textarea::-webkit-scrollbar {
     display: none;
+}
+
+.back-button {
+    cursor: pointer;
 }
