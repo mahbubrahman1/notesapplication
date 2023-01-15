@@ -75,3 +75,12 @@ def edit_note(request, pk):
         serializer.save()
 
     return Response(serializer.data)
+
+
+# delete note 
+@api_view(['DELETE'])
+def delete_note(request, pk):
+    note = Note.objects.get(id=pk)
+    note.delete()
+
+    return Response()

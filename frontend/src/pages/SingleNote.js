@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
@@ -25,6 +25,17 @@ const SingleNote = () => {
         })
     }
 
+    // delete note
+    const deleteNote = () => {
+        fetch(`http://127.0.0.1:8000/api/note/${id}/delete/`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'applicaion/json'
+            }
+        })
+        navigate('/')
+    }
+
     // handle submit
     const handleSubmit = () => {
         editNote();
@@ -33,13 +44,10 @@ const SingleNote = () => {
 
     return (
         <div className='note'>
-
-            {/* back button icon */}
             <div className="note-header">
                 <FontAwesomeIcon className='back-button' onClick={handleSubmit} icon={faArrowLeft} size='2x' />
+                <button onClick={deleteNote}>Delete</button>
             </div>
-
-            {/* note area */}
             <textarea onChange={(e) => { setNote({ ...note, 'body': e.target.value }) }} defaultValue={note?.body}></textarea>
         </div >
     )

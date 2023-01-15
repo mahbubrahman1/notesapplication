@@ -167,6 +167,10 @@ svg {
     margin-right: 8px;
 }
 
+.note-header svg {
+    cursor: pointer;
+}
+
 .note-header button {
     border: none;
     outline: none;
@@ -194,8 +198,4 @@ svg {
 
 .note textarea::-webkit-scrollbar {
     display: none;
-}
-
-.back-button {
-    cursor: pointer;
 }
