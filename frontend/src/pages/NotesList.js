@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import CreateButton from '../components/CreateButton'
 import NoteItem from '../components/NoteItem'
 
 const NotesList = () => {
@@ -23,6 +24,7 @@ const NotesList = () => {
                     ))
                 }
             </div>
+            <CreateButton />
         </div>
     )
 }
