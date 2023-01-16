@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,12 +8,8 @@ const SingleNote = () => {
     const navigate = useNavigate();
     const [note, setNote] = useState(null);
 
-    // useEffect(() => {
-    //     if (id === 'new')
-    //         return fetch(`http://127.0.0.1:8000/api/notes/${id}`)
-    //             .then(response => response.json())
-    //             .then(data => setNote(data))
-    // }, [id])
+
+    // get note
 
     useEffect(() => {
         getNote()
@@ -26,7 +22,9 @@ const SingleNote = () => {
         setNote(data)
     }
 
+
     // edit or update note
+
     const editNote = () => {
         fetch(`http://127.0.0.1:8000/api/notes/${id}/update/`, {
             method: 'PUT',
@@ -37,7 +35,9 @@ const SingleNote = () => {
         })
     }
 
+
     // delete note
+
     const deleteNote = () => {
         fetch(`http://127.0.0.1:8000/api/notes/${id}/delete/`, {
             method: 'DELETE',
@@ -48,7 +48,9 @@ const SingleNote = () => {
         navigate('/')
     }
 
+
     // create note 
+
     const createNote = () => {
         fetch(`http://127.0.0.1:8000/api/notes/create/`, {
             method: 'POST',
@@ -59,7 +61,9 @@ const SingleNote = () => {
         })
     }
 
+
     // handle submit
+
     const handleSubmit = () => {
         if (id !== 'new' && note.body === '') {  // it's not a new note and there are no note body then go ahead and delete
             deleteNote();
@@ -71,10 +75,13 @@ const SingleNote = () => {
         navigate('/');
     }
 
+
     // delete note with change text 
+
     const handleChange = (value) => {
         setNote(note => ({ ...note, 'body': value }))
     }
+
 
     return (
         <div className='note'>
