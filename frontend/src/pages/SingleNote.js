@@ -86,9 +86,7 @@ const SingleNote = () => {
     return (
         <div className='note'>
             <div className="note-header">
-                {/* <Link to='/'> */}
-                <FontAwesomeIcon onClick={handleSubmit} icon={faArrowLeft} size='2x' />
-                {/* </Link> */}
+                <FontAwesomeIcon onClick={handleSubmit} icon={faArrowLeft} />
 
                 {/* condition for delete and done button */}
                 {id !== 'new' ? (

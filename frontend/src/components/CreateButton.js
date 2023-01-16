@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const CreateButton = () => {
     return (
-        <Link to='/note/new' className='floating-button'>
+        <Link to='/note/new' className='create-button'>
             <FontAwesomeIcon icon={faPlus} />
         </Link>
     )
