@@ -48,6 +48,7 @@ a {
     background-color: var(--color-white);
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
     position: relative;
+    border-radius: 5px;
 }
 
 /* .app-header {
