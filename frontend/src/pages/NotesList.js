@@ -40,7 +40,7 @@ const NotesList = () => {
                 <p className='notes-count'>{notes.length}</p>
             </div>
             <div>
-                <input onChange={handleSearchField} type='text'></input>
+                <input onChange={handleSearchField} type='text' placeholder='Search' className='search-field'></input>
             </div>
             <div className='notes-list'>
                 {

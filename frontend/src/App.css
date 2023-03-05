@@ -179,3 +179,23 @@ span {
 .note textarea::-webkit-scrollbar {
     display: none;
 }
+
+.search-field {
+    margin-left: 15px;
+    width: 94%;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    margin-top: 6px;
+    background-color: #d6d1d1;
+    color: #2e3235;
+}
+
+.search-field::placeholder {
+    color: #999;
+}
+
+input:focus {
+    outline: none;
+}
