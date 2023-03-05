@@ -15,7 +15,7 @@ const NotesList = () => {
         getNotes()
     }, [])
 
-
+    // get notes 
     const getNotes = async () => {
         const response = await fetch(`http://127.0.0.1:8000/api/notes`)
         const data = await response.json()
@@ -24,11 +24,12 @@ const NotesList = () => {
     }
 
 
+    // note search 
     const handleSearchField = e => {
         const searchInput = e.target.value
         setSearchText(searchInput)
-        const matched_notes = notes.filter(note => note.body.toLowerCase().includes(searchInput.toLowerCase()))
-        setMatchedNotes(matched_notes)
+        const matchedNotes = notes.filter(note => note.body.toLowerCase().includes(searchInput.toLowerCase()))
+        setMatchedNotes(matchedNotes)
     }
 
 

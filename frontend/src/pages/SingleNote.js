@@ -10,7 +10,6 @@ const SingleNote = () => {
 
 
     // get note
-
     useEffect(() => {
         getNote()
     }, [id])
@@ -25,8 +24,8 @@ const SingleNote = () => {
 
     // edit or update note
 
-    const editNote = () => {
-        fetch(`http://127.0.0.1:8000/api/notes/${id}/update/`, {
+    const editNote = async () => {
+        await fetch(`http://127.0.0.1:8000/api/notes/${id}/update/`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,8 +37,8 @@ const SingleNote = () => {
 
     // delete note
 
-    const deleteNote = () => {
-        fetch(`http://127.0.0.1:8000/api/notes/${id}/delete/`, {
+    const deleteNote = async () => {
+        await fetch(`http://127.0.0.1:8000/api/notes/${id}/delete/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -51,8 +50,8 @@ const SingleNote = () => {
 
     // create note 
 
-    const createNote = () => {
-        fetch(`http://127.0.0.1:8000/api/notes/create/`, {
+    const createNote = async () => {
+        await fetch(`http://127.0.0.1:8000/api/notes/create/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

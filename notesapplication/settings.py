@@ -83,12 +83,8 @@ WSGI_APPLICATION = 'notesapplication.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '8Ups4vFp4nYBjc8rpMIo',
-        'HOST': 'containers-us-west-66.railway.app',
-        'PORT': '7560',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
